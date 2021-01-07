@@ -1,0 +1,83 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<h1>SAVINGS..</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table class="center">
+       
+        <tr>
+            <td>SAVINGS</td>
+            <td><input type="text" name="savings"/></td>
+        </tr>
+        
+        
+        <tr>
+            <td>AMOUNT</td>
+            <td><input type="number" name="amt"/></td>
+        </tr>
+        <tr>
+            <td> DATE</td>
+            <td><input type="date" id="date" onload="GetDateTime()" name="date"/></td>
+        </tr>
+        <tr>
+            <td>SOURCE</td>
+            <td><input type="text" name="src"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="SAVE"/>
+            </td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>SAVINGS</th>
+            <th>SOURCE</th>
+            <th>DATE</th>
+            <th>AMOUNT</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+        
+            <td>{{d.2}}</td>
+                <td>{{d.3}}</td>
+                    <td>{{d.4}}</td>
+                    <td>{{d.5}}</td>
+                    
+                   
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+<script>
+    var msg="{{msg}}"
+   if (msg!="")
+   alert("{{msg}}")
+
+
+   function getDate() {
+   var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if(dd<10) {
+      dd = '0'+dd
+  } 
+
+  if(mm<10) {
+      mm = '0'+mm
+  } 
+
+  today = dd + '-' + mm + '-' + yyyy;
+  console.log(today);
+  document.getElementById("date").defaultValue = today;
+}
+
+
+window.onload = function() {
+  getDate();
+};
+</script>
+{% endblock%}

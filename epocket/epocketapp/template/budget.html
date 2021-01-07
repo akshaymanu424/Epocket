@@ -1,0 +1,47 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<h1>BUDGET..</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table class="center">
+        <tr>
+            <td>BUDGET TITLE</td>
+            <td><input type="text" name="budget" value="{{budget}}"/></td>
+        </tr>
+        <tr>
+            <td>BUDGET FROM</td>
+            <td><input type="date" name="bfrom" /></td>
+        </tr>
+        <tr>
+            <td>BUDGET TO</td>
+            <td><input type="date" name="bto" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="SUBMIT"/>
+            </td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>BUDGET</th>
+            <th>FROM</th>
+            <th colspan="2">TO</th>
+            
+        </tr>
+        {% for d in budgets %}
+        <td>{{d.2}}</td>
+            <td>{{d.3}}</td>
+                <td>{{d.4}}</td>
+                    <td><a style="color:blue;" href="/budgetlist?id={{d.0}}">Add budget list</a></td>
+        {% endfor %}
+    </table>
+</form>
+<script>
+    var msg="{{msg}}"
+   if (msg!="")
+   alert("{{msg}}")
+
+</script>
+{% endblock%}

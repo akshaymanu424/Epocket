@@ -1,0 +1,54 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<h1>BUDGET LIST..</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table class="center">
+        <tr>
+            <td>EXPENSE TYPE</td>
+            <td><select name="etype">
+                {% for d in etype %}
+                <option value="{{d.0}}">{{d.2}}</option>
+                {% endfor %}
+                </select>
+            </td>
+        </tr>
+       
+        <tr>
+            <td>AMOUNT</td>
+            <td><input type="number" name="amt"/></td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="SAVE"/>
+            </td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>EXPENSE TYPE</th>
+           
+            <th>AMOUNT</th>
+          
+        </tr>
+        {% for d in budget %}
+        <tr>
+        <td>{{d.0}}</td>
+            <td>{{d.1}}</td>
+        </tr>     
+        {% endfor %}
+        <tr>
+            <td><b style="color: red;">TOTAL</b></td>
+            <td><b style="color: red;">{{total}}</b></td>
+        </tr>
+    </table>
+</form>
+<script>
+    var msg="{{msg}}"
+   if (msg!="")
+   alert("{{msg}}")
+
+</script>
+{% endblock%}

@@ -1,0 +1,25 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<h1>EXPENSE..</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table class="center">
+        <tr>
+            <td>EXPENSE TYPE</td>
+            <td><input type="text" name="etype"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="SUBMIT"/>
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+    var msg="{{msg}}"
+   if (msg!="")
+   alert("{{msg}}")
+
+</script>
+{% endblock%}

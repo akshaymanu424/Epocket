@@ -1,0 +1,114 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<!-- <script>
+   
+window.onload = function() {
+	idate=[];
+    idate="{{jsonIdate}}";
+    alert(idate);
+    income=[];
+    income="{{jsonIncome}}";
+	var edate="{{jsonEdate}}";
+	var expense="{{jsonExpense}}";
+    var icount;
+    var ecount;
+    var i=0;
+	// $.ajax({
+    //             url: "/idate",
+    //             type:'GET',
+    //             success: function(data) 
+    //             { 
+    //                 alert(data);
+    //                 idate=$.parseJSON(data);
+                    
+                    
+    //             }
+    //         });
+	// 		$.ajax({
+    //             url: "/jsonIncome",
+    //             type:'GET',
+    //             success: function(data) 
+    //             { 
+    //                 alert(data);
+    //                 income=$.parseJSON(data);
+                    
+    //             }
+    //         });
+	// 		$.ajax({
+    //             url: "/edate",
+    //             type:'GET',
+    //             success: function(data) 
+    //             { 
+    //                 alert(data);
+    //                 edate=$.parseJSON(data);
+                    
+    //             }
+    //         });
+	// 		$.ajax({
+    //             url: "/jsonExpense",
+    //             type:'GET',
+    //             success: function(data) 
+    //             { 
+    //                 alert(data);
+    //                 expense=$.parseJSON(data);
+                    
+    //             }
+    //         });
+    debugger;
+    data = [];
+    alert(idate);
+    for(i=0;i<idate.length;i++)
+    {
+        data.push({'x':idate[i],'y':income[i]});
+    }
+    
+var chart1 = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Income"
+	},
+    axisX:{
+        title: "Date"
+    },
+	axisY: {
+		title: "Amount"
+	},
+    
+	data: [{
+		type: "column",
+		yValueFormatString: "#",
+		dataPoints: data ,
+	}]
+});
+chart1.render();
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Expense"
+	},
+    axisX:{
+        title: "Date"
+    },
+	axisY: {
+		title: "Amount"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#",
+		dataPoints: [
+			{x:edate,y:expense}
+		],
+	}]
+});
+chart2.render();
+
+}
+</script>
+
+<div id="chartContainer1" style="height: 370px; width: 750px; margin: 50px 10px 10px 100px;"></div>
+<div id="chartContainer2" style="height: 370px; width: 750px; margin: 50px 10px 10px 100px;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+{% endblock%} -->

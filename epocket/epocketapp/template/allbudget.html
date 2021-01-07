@@ -1,0 +1,27 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<h1>BUDGET..</h1>
+<form method="POST">
+    {% csrf_token %}
+   
+    <table border="1">
+        <tr>
+            <th>BUDGET</th>
+            <th>FROM</th>
+            <th colspan="2">TO</th>
+        </tr>
+        {% for d in budget %}
+        <td>{{d.2}}</td>
+            <td>{{d.3}}</td>
+                <td>{{d.4}}</td>
+                    <td><a style="color:blue;" href="/budgetview?id={{d.0}}">View Budget</a></td>
+        {% endfor %}
+    </table>
+</form>
+<script>
+    var msg="{{msg}}"
+   if (msg!="")
+   alert("{{msg}}")
+
+</script>
+{% endblock%}

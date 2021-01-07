@@ -1,0 +1,29 @@
+{% extends 'commonbase.html' %}
+{% block content %}
+<h1>LOGIN HERE..</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table class="center">
+        <tr>
+            <td>USERNAME</td>
+            <td><input type="text" name="uname"/></td>
+        </tr>
+        <tr>
+            <td>PASSWORD</td>
+            <td><input type="password" name="pword"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="SIGNIN"/>
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+    var msg="{{data}}"
+   if (msg!="")
+   alert("{{msg}}")
+
+</script>
+{% endblock%}

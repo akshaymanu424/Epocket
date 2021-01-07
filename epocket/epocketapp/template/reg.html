@@ -1,0 +1,61 @@
+{% extends 'commonbase.html' %}
+{% block content %}
+<h1>REGISTRATION</h1>
+<form method="POST">
+    {% csrf_token %}
+
+<table class="center">
+    <tr>
+        <td> NAME:</td>
+        <td><input type="text" name="sname"/></td>
+    </tr>
+    <tr>
+        <td>AGE:</td>
+        <td><input type="text" name="age"/></td>
+    </tr>
+    <tr>
+        <td>ADDRESS:</td>
+        <td><textarea name="addr"></textarea></td>
+    </tr>
+    <tr>
+        <td>PLACE:</td>
+        <td><input type="text" name="place"></td>
+    </tr>
+    <tr>
+        <td>DOB:</td>
+        <td><input type="date" name="dob"/></td>
+    </tr>
+    <tr>
+        <td>EMAIL:</td>
+        <td><input type="email" name="email"/></td>
+    </tr>
+    <tr>
+        <td>PASSWORD:</td>
+        <td><input type="password" name="pword"/></td>
+    </tr>
+    
+    <tr>
+        <td></td>
+        <td><input type="submit" value="ADD"/></td>
+    </tr>
+</table>
+<br>
+<!-- <table class="center" border="1">
+    <tr><th>COLLEGE</th><th>ADDRESS</th><th>CONTACT</th><th>MAIL</th><th></th><th></th></tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.1}}</td>
+        <td>{{d.2}}</td>
+        <td>{{d.3}}</td>
+        <td>{{d.4}}</td>
+        <td><a href="cupdate?cid={{d.0}}">Update</a></td>
+        <td><a href="clgdelete?cid={{d.0}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table> -->
+
+
+</form>
+
+
+{% endblock %}

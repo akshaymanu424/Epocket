@@ -1,0 +1,33 @@
+{% extends 'userbase.html' %}
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <table class="center">
+        
+        <tr>
+            <td>STARTING DATE</td>
+            <td><input type="date" name="bfrom" /></td>
+        </tr>
+        <tr>
+            <td>ENDING DATE</td>
+            <td><input type="date" name="bto" /></td>
+        </tr>
+        <tr>
+            <td>SELECT TYPE</td>
+            <td><select name="type" >
+                    <option>Income</option>
+                    <option>Expense</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="SUBMIT"/>
+            </td>
+        </tr>
+    </table>
+    
+</form>
+
+{% endblock%}
